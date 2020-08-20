@@ -83,7 +83,12 @@ $ git commit -m 'add markdown'
 * 커밋 메시지는 해당하는 이력을 나타낼 수 있도록 작성하여야 함
 * 커밋 이력을 확인하기 위해선 아래의 명령어를 사용한다
 
-
+```bash
+$ git add .                # 현재 디렉토리
+$ git add a.html           # 특정 파일 
+$ git add b.html c.html    # 특정 다수 파일 
+$ git add blog             # 특정 폴더
+```
 
 ```bash
 $ git log
@@ -96,11 +101,5 @@ Date:   Thu Aug 20 14:58:10 2020 +0900
 $ git log -1
 $ git log --oneline
 $ git log --oneline -1
-```
-
-
-
-```bash
-
 ```
 
