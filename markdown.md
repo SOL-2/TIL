@@ -38,7 +38,7 @@ print('hihi')
 
 ## 링크
 
-외부 url : google](http://google.com)
+외부 url : [google](http://google.com) 
 
 특정파일의 상대경로 : [README](./README.md)
 
