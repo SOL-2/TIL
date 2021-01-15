@@ -55,4 +55,4 @@ woman = True
 age = 30
 if woman == True:
     if age >= 30:
-        print('멋진 여성의 길에 들어섰구나')
+        print('멋진 여성의 길에 들어섰구나')  
