@@ -82,6 +82,74 @@
 # 'a'모드는 파일에 내용 추가. 기존 내용을 그대로 유지하고 뒤에 내용을 덧붙임
 # 'w'모드는 덮어쓰고 새로 만듦
 
-f = open('live.txt', 'at')
-f.write('\n\nby. 푸쉬킨.')
-f.close() 
+# f = open('live.txt', 'at')
+# f.write('\n\nby. 푸쉬킨.')
+# f.close() 
+
+# 파일 입출력이 끝나면 반드시 close 함수로 닫아야  읽기 모드로 다시 열 수 있음
+# 파일을 확실하게 닫기 위해 with 블록 사용
+
+# with open('live.txt', 'rt') as f:
+#     text = f.read()
+# print(text)
+
+
+
+###################
+# 파일 관리
+# os / shutil 모듈
+
+# live.txt 파일 복사
+import shutil
+
+# shutil.copy('live.txt', 'live2.txt')
+
+
+# 디렉토리 관리 함수
+
+# 테스트 디렉토리에 파일을 생성해둠
+# f = open('/Users/janghansol/TIL/test/test_1.txt','wt')
+# f.write('''테스트입니다용
+# 기억하세요
+# 읽을 필요없어용''')
+# f.close()
+
+# shutil 모듈을 활용하여 복사
+path = '/Users/janghansol/TIL/test/'
+
+# shutil.copy(path + 'test_1.txt', path + 'test_2.txt')
+# shutil.copy(path + 'test_1.txt', path + 'ryoni.txt')
+# shutil.copy(path + 'test_1.txt', path + 'sol2.txt')
+
+
+import os
+
+files = os.listdir(path)
+
+# for file in files:
+#     print(file)
+
+# test_2.txt
+# test_1.txt
+# ryoni.txt
+# sol2.txt
+
+
+def dumpdir(path):
+    files = os.listdir(path)
+    for file in files:
+        if path[ -1] == '/':
+            fullpath = path + file
+        else:
+            fullpath = path + '/' + file
+        # print(fullpath)
+
+        if os.path.isdir(fullpath):
+            print('[' + fullpath + ']')
+            dumpdir(fullpath)
+
+        else:
+            print('\t' + fullpath)
+
+
+dumpdir(path)

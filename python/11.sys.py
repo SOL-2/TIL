@@ -26,3 +26,14 @@ if(len(birth) != 8 or birth.isnumeric() == False):
 tm = (int(birth[:4]), int(birth[4:6]), int(birth[6:8]), 0,0,0,0,0,0)
 ellapse = int((time.time() - time.mktime(tm)) / (24 * 60 * 60))
 print(ellapse)
+
+
+
+# 경과일 계산 2
+year = int(input('태어난 년도를 입력하세요(4자리) : '))
+month = int(input('태어난 월을 입력하세요 : '))
+day = int(input('태어난 일을 입력하세요 : '))
+
+tm = (year, month, day, 0, 0, 0, 0, 0, 0)
+ellapse = int((time.time() - time.mktime(tm)) / (24 * 60 * 60))
+print(ellapse)

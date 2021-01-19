@@ -10,7 +10,7 @@ mylist2 = [[1,2,3],[4,5]]
 
 # 2번째 풀이 
 count = 0
-for i in mylist2:
+for i in mylist:
     for q in i:
         print(q)
     
