@@ -138,18 +138,32 @@ files = os.listdir(path)
 def dumpdir(path):
     files = os.listdir(path)
     for file in files:
+        # 패스 뒤에 '/' 있으면 패스 뒤에 파일명만 붙이고
         if path[ -1] == '/':
             fullpath = path + file
+
+        # 패스 뒤에 '/' 없으면 패스 뒤에 '/' 붙이고 파일명 붙이기
         else:
             fullpath = path + '/' + file
         # print(fullpath)
 
+        # isdir : 폴더인지 확인하는 함수
         if os.path.isdir(fullpath):
             print('[' + fullpath + ']')
-            dumpdir(fullpath)
+            dumpdir(fullpath)   # 재귀함수 : 자신을 다시 호출
 
         else:
             print('\t' + fullpath)
 
 
-dumpdir(path)
+# dumpdir(path)
+
+# [/Users/janghansol/TIL/test/test2020]
+#         /Users/janghansol/TIL/test/test2020/test_2.txt
+#         /Users/janghansol/TIL/test/test2020/test_1.txt
+# [/Users/janghansol/TIL/test/test2021]
+#         /Users/janghansol/TIL/test/test2021/ryoni.txt
+#         /Users/janghansol/TIL/test/test2021/sol2.txt
+
+
+

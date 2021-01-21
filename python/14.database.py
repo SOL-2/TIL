@@ -104,21 +104,23 @@ import sqlite3
 
 # cursor.execute('UPDATE tblAddr SET addr = "서울" WHERE name = "장한솔"')
 
-# con.commit()
+# con.commit()  # 수정, 삭제 등 테이블을 변경하는 동작은 commit 호출해야 적용
 
 # cursor.close()
 # con.close()
 
-con = sqlite3.connect('addr.db')
-cursor = con.cursor()
 
-cursor.execute('SELECT * FROM tblAddr')
-while True:
-    record = cursor.fetchone()
-    if record == None:
-        break
+# 바뀌었는지 확인 코드
+# con = sqlite3.connect('addr.db')
+# cursor = con.cursor()
 
-    print('이름 : %s, 전화번호 : %s, 주소 : %s' %record)
+# cursor.execute('SELECT * FROM tblAddr')
+# while True:
+#     record = cursor.fetchone()
+#     if record == None:
+#         break
 
-cursor.close()
-con.close()
+#     print('이름 : %s, 전화번호 : %s, 주소 : %s' %record)
+
+# cursor.close()
+# con.close()
